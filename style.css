@@ -2,8 +2,8 @@
   --bg-main: #050607;
   --bg-panel: #0f1116;
   --bg-panel-alt: #14171f;
-  --accent: #c42222;
-  --accent-soft: rgba(196,34,34,0.35);
+  --accent: #00aaff;
+  --accent-soft: rgba(0,170,255,0.35);
   --text: #f0f0f0;
   --text-muted: #9fa5b5;
   --border: rgba(255,255,255,0.08);
@@ -94,7 +94,7 @@ header {
 }
 
 .nav-links a:hover {
-  background: rgba(196,34,34,0.12);
+  background: rgba(0,170,255,0.12);
   color: var(--text);
 }
 
