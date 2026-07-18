@@ -1,4 +1,4 @@
-# Nivmizz7 Portfolio
+# COOLIFY TEST
 
 Personal portfolio website — live at **[nivmizz7.dev](https://nivmizz7.dev)**
 
