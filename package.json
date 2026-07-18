@@ -2,22 +2,16 @@
   "name": "nivmizz7-portfolio",
   "version": "1.0.0",
   "description": "Portfolio website for Nivmizz7 - Back-end Web Developer & Server Management",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "serve": "http-server"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "keywords": [
-    "portfolio",
-    "developer",
-    "web"
-  ],
+  "keywords": ["portfolio", "developer", "web"],
   "author": "Nivmizz7",
   "license": "MIT",
-  "devDependencies": {
-    "vite": "^5.0.0"
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "repository": {
     "type": "git",

@@ -1,88 +1,151 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nivmizz7</title>
-  <link rel="icon" href="public/photo.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="src/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script defer type="module" src="src/script.js"></script>
+  <link rel="icon" href="assets/photo.jpg" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <header>
-    <div class="header-container">
-      <a href="https://nivmizz7.fr"><img src="public/photo.jpg" alt="Photo de Nivmizz7" class="profile-photo"></a>
+    <div class="header-container glass-panel">
+      <a href="https://nivmizz7.me"><img src="assets/photo.jpg" alt="Photo de Nivmizz7" class="profile-photo"></a>
       <div class="header-info">
-        <h1 data-fr="Nivmizz7" data-en="Nivmizz7">Nivmizz7</h1>
-        <p data-fr="Développeur Web Back-end & Gestion et Maintenance de serveurs" data-en="Back-end Web Developer & Server Management and Maintenance">Développeur Web Back-end & Gestion et Maintenance de serveurs</p>
+        <h1>Nivmizz7</h1>
+        <p>Back-end Web Developer & Server Management and Maintenance</p>
       </div>
     </div>
 
     <nav class="nav-container">
       <ul class="nav-links">
-        <li><a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a></li>
-        <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
-        <li><a href="#github" data-fr="GitHub" data-en="GitHub">GitHub</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/Nivmizz7" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
       </ul>
-      <div class="lang-switch">
-        <button id="fr" class="lang-btn active">FR</button>
-        <button id="en" class="lang-btn">EN</button>
-      </div>
     </nav>
   </header>
 
-  <section id="competences" class="section">
-    <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+  <section id="skills" class="section glass-panel">
+    <div class="section-header">
+      <h2>Skills</h2>
+      <div class="line"></div>
+    </div>
     <div class="skills">
-      <div class="skill">HTML / CSS / JS</div>
-      <div class="skill">Linux / Ubuntu</div>
-      <div class="skill">Container / Docker</div>
-      <div class="skill">VMWare ESXi / Proxmox</div>
-      <div class="skill">Git / GitHub</div>
+      <div class="skill"><i class="devicon-html5-plain colored"></i> HTML</div>
+      <div class="skill"><i class="devicon-css3-plain colored"></i> CSS</div>
+      <div class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+      <div class="skill"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+      <div class="skill"><i class="devicon-vuejs-plain colored"></i> Vue.js</div>
+      <div class="skill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+      <div class="skill"><i class="devicon-c-plain colored"></i> C</div>
+      <div class="skill"><i class="devicon-cplusplus-plain colored"></i> C++</div>
+      <div class="skill"><i class="devicon-csharp-plain colored"></i> C#</div>
+      <div class="skill"><i class="devicon-bash-plain"></i> Bash</div>
+      <div class="skill"><i class="devicon-linux-plain"></i> Linux</div>
+      <div class="skill"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</div>
+      <div class="skill"><i class="devicon-nixos-plain colored"></i> Nix</div>
+      <div class="skill"><i class="devicon-docker-plain colored"></i> Docker</div>
+      <div class="skill"><i class="fas fa-server" style="color: #0095ff;"></i> VMware ESXi</div>
+      <div class="skill"><i class="devicon-proxmox-plain colored"></i> Proxmox VE</div>
+      <div class="skill"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+      <div class="skill"><i class="devicon-json-plain colored"></i> JSON</div>
+      <div class="skill"><i class="devicon-git-plain colored"></i> Git</div>
+      <div class="skill"><i class="devicon-github-original"></i> GitHub</div>
     </div>
   </section>
 
-<section id="projets" class="section">
-  <h2 data-fr="Projets en cours" data-en="Current Projects">Projets en cours</h2>
-  <div class="projects">
-    <div class="project">
-      <h3>
-        Contrib in these projects:
-      </h3>
-      <p><a href="https://github.com/TarkovTracker-org/TarkovTracker-Archive">TarkovTracker-Archive</a> - <a href="https://github.com/TarkovTracker-org">TarkovTracker-org</a> (Archived)</p>
-      <p><a href="https://github.com/TarkovTracker-org/TarkovTracker">TarkovTracker</a> - <a href="https://github.com/TarkovTracker-org">TarkovTracker-org</a></p>
-      <p><a href="https://github.com/TarkovTracker-org/Tarkov-Data-Overlay">Tarkov Data Overlay</a> - <a href="https://github.com/TarkovTracker-org">TarkovTracker-org</a></p>
-      <p><a href="https://github.com/TarkovTracker-org/TrackerBot">TrackerBot</a> - <a href="https://github.com/TarkovTracker-org">TarkovTracker-org</a></p>
-      <p><a href="https://github.com/TarkovTracker-org/Status">Status</a> - <a href="https://github.com/TarkovTracker-org">TarkovTracker-org</a></p>
-      <p></p>
-      <p><a href="https://github.com/The-Hideout/Tarkov-dev">Tarkov.dev</a> - <a href="https://github.com/The-Hideout">The Hideout</a></p>
-      <p><a href="https://github.com/The-Hideout/TarkovMonitor">TarkovMonitor</a> - <a href="https://github.com/The-Hideout">The Hideout</a></p>
-      <p><a href="https://github.com/The-Hideout/Stash">Stash</a> - <a href="https://github.com/The-Hideout">The Hideout</a></p>
-      <p></p>
-      <p><a href="https://github.com/FusionWowCMS/FusionCMS">FusionCMS</a> - <a href="https://github.com/FusionWoWCMS">FusionWoWCMS</a></p>
-      <p><a href="https://github.com/Wilsman/cultist-circle">CultistCircle</a> - <a href="https://github.com/Wilsman">Wilsman</a></p>
-      <p></p>
-      <p><a href="https://github.com/Nivmizz7/Kolotun">Kolotun</a> - <a href="https://github.com/Nivmizz7">Nivmizz7</a> (Archived)</p>
-      <p><a href="https://github.com/Nivmizz7/Peninsula">Peninsula</a> - <a href="https://github.com/Nivmizz7">Nivmizz7</a> (Archived)
-      <p><a href="https://github.com/Nivmizz7/web">Web</a> - <a href="https://github.com/Nivmizz7">Nivmizz7</a> (This website)</p>
-      <p></p>
-      <h3>PR in review:</h3>
-      <p><a href="https://github.com/RatScanner/RatScanner">RatScanner</a> - <a href="https://github.com/RatScanner">RatScanner</a></p>
-      <p><a href="https://github.com/Wilsman/boss_spawns">boss_spawns</a> - <a href="https://github.com/Wilsman">Wilsman</a></p>
+  <section id="projects" class="section glass-panel">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <div class="line"></div>
     </div>
-  </div>
-</section>
+    <div class="projects" id="github-projects">
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
+            style="width: 24px; vertical-align: middle; margin-right: 8px;"> TarkovTracker.org</h3>
+        <p>A comprehensive quest tracking and progression platform for Escape from Tarkov.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+          <span class="tag"><i class="devicon-nuxtjs-plain colored"></i> Nuxt 4</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/tarkovtracker" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+          <a href="https://tarkovtracker.org" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+          </a>
+        </div>
+      </div>
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
+            style="width: 24px; vertical-align: middle; margin-right: 8px;"> Tarkov Data Overlay</h3>
+        <p>Overlay for Tarkov.dev API data.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-json-plain colored"></i> JSON</span>
+          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/tarkov-data-overlay" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
+            style="width: 24px; vertical-align: middle; margin-right: 8px;"> TrackerBot</h3>
+        <p>Discord bot for the TarkovTracker.org discord server.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/trackerbot" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="github" class="section">
-    <h2 data-fr="Mes contributions GitHub" data-en="My GitHub Contributions">Mes contributions GitHub</h2>
-    <img src="https://ghchart.rshah.org/Nivmizz7" alt="GitHub Contributions" style="width:100%; max-width:700px;">
+  <section id="contact" class="section glass-panel">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <div class="line"></div>
+    </div>
+    <div class="contact-info" style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
+      <p style="margin-bottom: 15px;">
+        <i class="fa-solid fa-envelope" style="color: #64748b; margin-right: 10px;"></i>
+        <a href="mailto:niv@nivmizz7.dev"
+          style="color: var(--text-color); text-decoration: none; font-weight: 500;">niv@nivmizz7.dev</a>
+      </p>
+      <p>
+        <i class="fa-brands fa-discord" style="color: #5865F2; margin-right: 10px;"></i>
+        <a href="https://discord.gg/PpdDwd2M6V" target="_blank" rel="noopener noreferrer"
+          style="color: var(--text-color); text-decoration: none; font-weight: 500;">Join the Discord Server</a>
+      </p>
+    </div>
   </section>
 
   <footer>
-    <p data-fr="© 2026 Nivmizz7" data-en="© 2026 Nivmizz7">© 2026 Nivmizz7</p>
-    <p>Contact : <a href="https://github.com/Nivmizz7">Github</a> - <a href="mailto:i.am.root@nivmizz7.fr">Mail</a></p>
+    <p>© <span id="current-year"></span> Nivmizz7 | <a href="https://github.com/Nivmizz7" target="_blank"><i
+          class="fa-brands fa-github"></i> GitHub</a></p>
   </footer>
+
 </body>
+
 </html>
