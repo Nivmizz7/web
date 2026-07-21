@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Set current year in footer
-  const currentYearEl = document.getElementById('current-year');
-  if (currentYearEl) {
-    currentYearEl.textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
+
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 });
