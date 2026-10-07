@@ -1,20 +1,32 @@
 {
   "name": "nivmizz7-portfolio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Portfolio website for Nivmizz7 - Back-end Web Developer & Server Management",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
-  "keywords": ["portfolio", "developer", "web"],
+  "keywords": [
+    "portfolio",
+    "developer",
+    "web"
+  ],
   "author": "Nivmizz7",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^5.2.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Nivmizz7/web.git"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
