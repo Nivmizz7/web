@@ -1,16 +1,15 @@
 import express, { type Request, type Response } from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getProject } from './data.js';
+import { getProject, getTranslation } from './data.js';
 import { LANG_COOKIE, isLang, resolveLang, type Lang } from './i18n.js';
 import {
   contactPage,
   homePage,
   layout,
   notFoundPage,
-  pageForProjectSlug,
   projectPage,
-  projectsIndexPage,
+  translationPage,
   type PageId,
 } from './views.js';
 
@@ -44,38 +43,50 @@ function send(req: Request, res: Response, page: PageId, title: string, descript
     .send(layout({ lang, page, title, description, path: req.path, body }));
 }
 
-// ---------- Routes jolies ----------
+// ---------- Routes ----------
 app.get('/', (req, res) => {
   const lang = langOf(req);
-  send(req, res, 'home', 'Accueil', 'Portfolio de Nivmizz7', homePage(lang));
-});
-
-app.get('/projets', (req, res) => {
-  const lang = langOf(req);
-  send(req, res, 'projets', 'Projets', 'Projets Staff et contributions', projectsIndexPage(lang));
+  send(req, res, 'home', 'Nivmizz7', 'Portfolio de Nivmizz7', homePage(lang));
 });
 
 app.get('/projets/:slug', (req, res) => {
   const lang = langOf(req);
   const project = getProject(req.params.slug);
   if (!project) {
-    send(req, res, 'notfound', '404', 'Page introuvable', notFoundPage(lang));
+    send(req, res, 'notfound', '404 — Nivmizz7', 'Page introuvable', notFoundPage(lang));
     return;
   }
-  send(req, res, pageForProjectSlug(project.slug), project.title, project.short[lang], projectPage(lang, project));
+  send(req, res, 'project', `${project.title} — Nivmizz7`, project.short[lang], projectPage(lang, project));
+});
+
+app.get('/traductions/:slug', (req, res) => {
+  const lang = langOf(req);
+  const translation = getTranslation(req.params.slug);
+  if (!translation) {
+    send(req, res, 'notfound', '404 — Nivmizz7', 'Page introuvable', notFoundPage(lang));
+    return;
+  }
+  send(
+    req,
+    res,
+    'translation',
+    `${translation.file} — Nivmizz7`,
+    `Traduction française de ${translation.file}`,
+    translationPage(lang, translation),
+  );
 });
 
 app.get('/contact', (req, res) => {
   const lang = langOf(req);
-  send(req, res, 'contact', 'Contact', 'Contacter Nivmizz7', contactPage(lang));
+  send(req, res, 'contact', 'Contact — Nivmizz7', 'Contacter Nivmizz7', contactPage(lang));
 });
 
 // ---------- API ----------
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', version: '2.0.0-ts', uptime: Math.round(process.uptime()) });
+  res.json({ status: 'ok', version: '3.0.0', uptime: Math.round(process.uptime()) });
 });
 
-// ---------- Langue : /lang/fr?next=/projets -> cookie + redirect ----------
+// ---------- Langue : /lang/fr?next=/contact -> cookie + redirect ----------
 app.get('/lang/:lang', (req, res) => {
   const rawNext = Array.isArray(req.query.next) ? req.query.next[0] : req.query.next;
   const next = typeof rawNext === 'string' && rawNext.startsWith('/') ? rawNext : '/';
@@ -91,16 +102,18 @@ app.get('/lang/:lang', (req, res) => {
   res.redirect(302, next);
 });
 
-// ---------- Redirects legacy vieux .html -> jolies routes ----------
+// ---------- Redirects legacy -> nouvelles routes ----------
 const LEGACY: Record<string, string> = {
   '/index.html': '/',
   '/contact.html': '/contact',
+  '/projets': '/',
+  '/traductions': '/',
   '/projet-tarkovtracker.html': '/projets/tarkovtracker',
-  '/projet-data-overlay.html': '/projets/data-overlay',
-  '/projet-trackerbot.html': '/projets/trackerbot',
-  '/projet-tarkovdev.html': '/projets/tarkov-dev',
-  '/projet-tarkovmonitor.html': '/projets/tarkovmonitor',
-  '/projet-cultist.html': '/projets/cultistcircle',
+  '/projet-data-overlay.html': '/',
+  '/projet-trackerbot.html': '/',
+  '/projet-tarkovdev.html': '/',
+  '/projet-tarkovmonitor.html': '/',
+  '/projet-cultist.html': '/',
 };
 for (const [from, to] of Object.entries(LEGACY)) {
   app.get(from, (_req, res) => res.redirect(301, to));
@@ -109,7 +122,7 @@ for (const [from, to] of Object.entries(LEGACY)) {
 // ---------- 404 ----------
 app.use((req, res) => {
   const lang = langOf(req);
-  send(req, res, 'notfound', '404', 'Page introuvable', notFoundPage(lang));
+  send(req, res, 'notfound', '404 — Nivmizz7', 'Page introuvable', notFoundPage(lang));
 });
 
 app.listen(PORT, () => {

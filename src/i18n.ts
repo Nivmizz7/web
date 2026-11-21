@@ -5,42 +5,33 @@ export const DEFAULT_LANG: Lang = 'fr';
 
 const STRINGS = {
   // nav
-  'nav.home': { fr: 'Accueil', en: 'Home' },
-  'nav.projects': { fr: 'Projets', en: 'Projects' },
+  'nav.home': { fr: 'Home', en: 'Home' },
   'nav.contact': { fr: 'Contact', en: 'Contact' },
-  'nav.staff': { fr: 'Staff', en: 'Staff' },
-  'nav.contrib': { fr: 'Contributeur', en: 'Contributor' },
-  'nav.own': { fr: 'Perso', en: 'Own' },
   // home
-  'home.subtitle': {
-    fr: 'Développeur Web Back-end & Gestion / Maintenance de serveurs',
-    en: 'Back-end Web Developer & Server Management / Maintenance',
+  'home.projects': { fr: 'Projets :', en: 'Projects:' },
+  'home.translations': { fr: 'Traductions :', en: 'Translations:' },
+  'home.contributors': { fr: 'Contributeurs :', en: 'Contributors:' },
+  // projet
+  'project.role': { fr: 'Rôle :', en: 'Role:' },
+  'project.links': { fr: 'Liens', en: 'Links' },
+  // traduction
+  'translation.authors': { fr: 'Auteur(s) :', en: 'Author(s):' },
+  'translation.translators': { fr: 'Traducteur(s) :', en: 'Translator(s):' },
+  'translation.version': { fr: 'Version :', en: 'Version:' },
+  'translation.download': {
+    fr: 'Lien de téléchargement',
+    en: 'Download link',
   },
-  'home.see': { fr: 'Voir :', en: 'See:' },
-  'home.open': { fr: 'Ouvrir →', en: 'Open →' },
-  // projets
-  'projects.title': { fr: 'Projets', en: 'Projects' },
-  'projects.subtitle': {
-    fr: 'Un projet = une page. Choisis dans le menu ou ci-dessous.',
-    en: 'One project = one page. Pick from the menu or below.',
-  },
-  'projects.features': { fr: 'Points clés', en: 'Highlights' },
-  'projects.contributors': { fr: 'Contributeurs', en: 'Contributors' },
-  'projects.prev': { fr: '← Projet précédent', en: '← Previous project' },
-  'projects.next': { fr: 'Projet suivant →', en: 'Next project →' },
+  'translation.otherLinks': { fr: 'Autres liens', en: 'Other links' },
   // contact
   'contact.title': { fr: 'Contact', en: 'Contact' },
-  'contact.text': {
-    fr: 'Une question, une collaboration, un bug à signaler ? Écris-moi.',
-    en: 'A question, a collaboration, a bug to report? Message me.',
-  },
-  'contact.discord': { fr: 'Rejoindre le serveur Discord', en: 'Join the Discord Server' },
+  'contact.text': { fr: 'Pour me contacter :', en: 'Get in touch:' },
+  'contact.discord': { fr: 'Serveur Discord', en: 'Discord server' },
+  // commun
+  'common.back': { fr: "Retour à l'accueil", en: 'Back home' },
   // 404
   'notfound.title': { fr: 'Page introuvable', en: 'Page not found' },
-  'notfound.text': {
-    fr: "Cette extraction ne mène nulle part. Retour à l'accueil ?",
-    en: 'This extract leads nowhere. Back home?',
-  },
+  'notfound.text': { fr: "Cette page n'existe pas.", en: 'This page does not exist.' },
 } as const;
 
 export type I18nKey = keyof typeof STRINGS;
