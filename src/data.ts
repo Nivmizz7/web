@@ -120,6 +120,7 @@ export const CONTRIBUTED_REPOS: RepoLink[] = [
   { name: 'the-hideout/tarkov-dev', url: 'https://github.com/the-hideout/tarkov-dev' },
   { name: 'the-hideout/tarkovmonitor', url: 'https://github.com/the-hideout/tarkovmonitor' },
   { name: 'Wilsman/cultist-circle', url: 'https://github.com/Wilsman/cultist-circle' },
+  { name: 'Wilsman/tarkovcodes', url: 'https://github.com/Wilsman/tarkovcodes/pull/1' },
 ];
 
 export function getProject(slug: string): Project | undefined {
