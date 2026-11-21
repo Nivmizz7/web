@@ -56,7 +56,7 @@ app.get('/projets/:slug', (req, res) => {
     send(req, res, 'notfound', '404 — Nivmizz7', 'Page introuvable', notFoundPage(lang));
     return;
   }
-  send(req, res, 'project', `${project.title} — Nivmizz7`, project.short[lang], projectPage(lang, project));
+  send(req, res, 'project', `${project.title[lang]} — Nivmizz7`, project.short[lang], projectPage(lang, project));
 });
 
 app.get('/traductions/:slug', (req, res) => {

@@ -10,7 +10,7 @@ export interface ProjectLink {
 
 export interface Project {
   slug: string;
-  title: string;
+  title: { fr: string; en: string };
   role?: { fr: string; en: string };
   logo: string;
   short: { fr: string; en: string };
@@ -37,7 +37,7 @@ export interface Translation {
 export const PROJECTS: Project[] = [
   {
     slug: 'tarkovtracker',
-    title: 'TarkovTracker.org',
+    title: { fr: 'TarkovTracker.org', en: 'TarkovTracker.org' },
     logo: '/assets/tarkovtracker-org.png',
     short: {
       fr: 'Plateforme communautaire de suivi de progression pour Escape from Tarkov : quêtes, hideout, compétences et équipes. Maintenance, fonctionnalités et support.',
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'wiki-eft-fr',
-    title: 'Wiki français Escape from Tarkov',
+    title: { fr: 'Wiki français Escape from Tarkov', en: 'French Escape from Tarkov Wiki' },
     role: { fr: 'Administrateur', en: 'Administrator' },
     logo: '/assets/wiki-eft-fr.png',
     short: {
@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'wiki-eft-arena-fr',
-    title: 'Wiki français Escape from Tarkov : Arena',
+    title: { fr: 'Wiki français Escape from Tarkov : Arena', en: 'French Escape from Tarkov: Arena Wiki' },
     role: { fr: 'Bureaucrate', en: 'Bureaucrat' },
     logo: '/assets/arena-logo.png',
     short: {

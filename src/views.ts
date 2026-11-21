@@ -98,7 +98,7 @@ ${body}
 
 export function homePage(lang: Lang): string {
   const projects: ListEntry[] = PROJECTS.map((project) => ({
-    label: project.title,
+    label: project.title[lang],
     href: `/projets/${project.slug}`,
   }));
   const translations: ListEntry[] = TRANSLATIONS.map((translation) => ({
@@ -142,10 +142,12 @@ export function projectPage(lang: Lang, project: Project): string {
     external: true,
   }));
 
-  return `<h1>${esc(project.title)}</h1>
+  const title = project.title[lang];
+
+  return `<h1>${esc(title)}</h1>
 ${role}
 <div class="project-head">
-  <img class="project-logo" src="${esc(project.logo)}" alt="${esc(project.title)}">
+  <img class="project-logo" src="${esc(project.logo)}" alt="${esc(title)}">
   <p>${esc(project.short[lang])}</p>
 </div>
 <h2>${esc(t(lang, 'project.links'))}</h2>
