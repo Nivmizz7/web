@@ -24,7 +24,7 @@ export interface PersonLink {
 
 export interface Translation {
   slug: string;
-  title: string;
+  title: { fr: string; en: string };
   file: string;
   image: string;
   authors: PersonLink[];
@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
 export const TRANSLATIONS: Translation[] = [
   {
     slug: 'nivfactory-french-1-7c',
-    title: 'Usine',
+    title: { fr: 'Usine', en: 'Factory' },
     file: 'NivFactoryFrench1_7c.png',
     image: '/assets/NivFactoryFrench1_7c-preview.png',
     authors: [{ name: 'RE3MR', url: 'https://re3mr.com' }],
@@ -100,7 +100,7 @@ export const TRANSLATIONS: Translation[] = [
   },
   {
     slug: 'nivground-zero-0-3c',
-    title: 'Point Zéro',
+    title: { fr: 'Point Zéro', en: 'Ground Zero' },
     file: 'NivGroundZero03c.png',
     image: '/assets/NivGroundZero03c.png',
     authors: [{ name: 'RE3MR', url: 'https://re3mr.com' }],
@@ -109,6 +109,23 @@ export const TRANSLATIONS: Translation[] = [
     download: '/assets/NivGroundZero03c.png',
     otherLinks: [
       { label: 'Point Zéro — wiki FR', href: 'https://escapefromtarkov.fandom.com/fr/wiki/Point_Z%C3%A9ro' },
+    ],
+  },
+  {
+    slug: 'all-endings',
+    title: {
+      fr: "Différentes fins d'Escape from Tarkov",
+      en: 'All endings in Escape from Tarkov',
+    },
+    file: 'Endings.png',
+    image: '/assets/Endings.png',
+    authors: [{ name: 'CallSign_Smokey', url: 'https://www.twitch.tv/callsignsmokey' }],
+    translators: [{ name: 'Nivmizz7', url: 'https://github.com/Nivmizz7' }],
+    version: '2.0',
+    download: '/assets/Endings.png',
+    otherLinks: [
+      { label: 'Fins — wiki FR', href: 'https://escapefromtarkov.fandom.com/fr/wiki/Fins' },
+      { label: "Le Ticket — wiki FR", href: 'https://escapefromtarkov.fandom.com/fr/wiki/Le_Ticket' },
     ],
   },
 ];

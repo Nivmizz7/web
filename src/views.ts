@@ -102,7 +102,7 @@ export function homePage(lang: Lang): string {
     href: `/projets/${project.slug}`,
   }));
   const translations: ListEntry[] = TRANSLATIONS.map((translation) => ({
-    label: translation.title,
+    label: translation.title[lang],
     href: `/traductions/${translation.slug}`,
   }));
   const repos: ListEntry[] = CONTRIBUTED_REPOS.map((repo) => ({
@@ -164,7 +164,9 @@ export function translationPage(lang: Lang, translation: Translation): string {
     external: true,
   }));
 
-  return `<h1>${esc(translation.title)}</h1>
+  const title = translation.title[lang];
+
+  return `<h1>${esc(title)}</h1>
 <p><a href="${esc(translation.download)}" target="_blank" rel="noopener noreferrer"><img class="translation-image" src="${esc(translation.image)}" alt="${esc(translation.file)}"></a></p>
 <p><strong>${esc(t(lang, 'translation.authors'))}</strong> ${peopleLinks(translation.authors)}</p>
 <p><strong>${esc(t(lang, 'translation.translators'))}</strong> ${peopleLinks(translation.translators)}</p>

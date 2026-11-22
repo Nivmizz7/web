@@ -70,7 +70,7 @@ app.get('/traductions/:slug', (req, res) => {
     req,
     res,
     'translation',
-    `${translation.file} — Nivmizz7`,
+    `${translation.title[lang]} — Nivmizz7`,
     `Traduction française de ${translation.file}`,
     translationPage(lang, translation),
   );
